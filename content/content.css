@@ -1,0 +1,376 @@
+/* TrueSource Radar - In-Page Overlay Styles */
+
+#truesource-radar-root {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483647;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #1F2937;
+  max-width: 360px;
+  width: calc(100vw - 48px);
+  box-sizing: border-box;
+}
+
+#truesource-radar-root * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ts-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  border-radius: 14px;
+  box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.18), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.ts-card.ts-alert-border {
+  border-left: 4px solid #EF4444;
+}
+
+/* Header */
+.ts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.ts-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ts-radar-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #4F46E5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.25);
+  display: inline-block;
+}
+
+.ts-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.ts-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ts-btn-toggle,
+.ts-btn-close {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #6B7280;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.ts-btn-toggle:hover,
+.ts-btn-close:hover {
+  background: #E5E7EB;
+  color: #111827;
+}
+
+/* Body */
+.ts-body {
+  padding: 12px 14px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Product Preview Row */
+.ts-product-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.ts-preview-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #D1D5DB;
+  background: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.ts-no-thumb {
+  width: 48px;
+  height: 48px;
+  background: #E5E7EB;
+  border-radius: 6px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  flex-shrink: 0;
+}
+
+.ts-preview-details {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ts-preview-title {
+  font-weight: 600;
+  font-size: 11.5px;
+  color: #1F2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.ts-keyword-tag {
+  font-size: 10.5px;
+  color: #4B5563;
+  margin-top: 2px;
+}
+
+.ts-keyword-tag strong {
+  color: #4F46E5;
+}
+
+/* Score row */
+.ts-score-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.ts-gauge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #F3F4F6;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.ts-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: ts-pulse 1.8s infinite;
+}
+
+@keyframes ts-pulse {
+  0% { transform: scale(0.95); opacity: 0.9; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+  100% { transform: scale(0.95); opacity: 0.9; }
+}
+
+.ts-score-num {
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.ts-status {
+  display: flex;
+  flex-direction: column;
+}
+
+.ts-verdict {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.ts-retail-price {
+  font-size: 11px;
+  color: #6B7280;
+}
+
+/* Savings banner */
+.ts-savings-banner {
+  display: flex;
+  justify-content: space-between;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.ts-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.ts-stat-label {
+  font-size: 10px;
+  color: #6B7280;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.ts-stat-value {
+  font-weight: 700;
+  font-size: 14px;
+  color: #10B981;
+}
+
+.ts-stat-value.ts-markup {
+  color: #EF4444;
+}
+
+/* Flags */
+.ts-flags {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.ts-flag-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #FEF2F2;
+  border: 1px solid #FEE2E2;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.ts-flag-bullet {
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+.ts-flag-text strong {
+  display: block;
+  font-size: 11px;
+  color: #991B1B;
+}
+
+.ts-flag-text p {
+  font-size: 10.5px;
+  color: #7F1D1D;
+  margin-top: 1px;
+}
+
+.ts-clean-notice {
+  font-size: 11px;
+  color: #047857;
+  background: #ECFDF5;
+  border: 1px solid #D1FAE5;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Action Links */
+.ts-links-header {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #4B5563;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.ts-btn-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ts-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 11.5px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.ts-action-btn.ts-ali {
+  background: #FFF7ED;
+  color: #C2410C;
+  border: 1px solid #FFEDD5;
+}
+.ts-action-btn.ts-ali:hover {
+  background: #FFEDD5;
+}
+
+.ts-action-btn.ts-lens {
+  background: #EEF2FF;
+  color: #4338CA;
+  border: 1px solid #E0E7FF;
+}
+.ts-action-btn.ts-lens:hover {
+  background: #E0E7FF;
+}
+
+.ts-action-btn.ts-alibaba {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #DBEAFE;
+}
+.ts-action-btn.ts-alibaba:hover {
+  background: #DBEAFE;
+}
+
+.ts-action-btn.ts-1688 {
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FDE68A;
+}
+.ts-action-btn.ts-1688:hover {
+  background: #FDE68A;
+}
+
+.ts-action-btn.ts-yandex {
+  background: #F5F3FF;
+  color: #6D28D9;
+  border: 1px solid #EDE9FE;
+}
+.ts-action-btn.ts-yandex:hover {
+  background: #EDE9FE;
+}
+
+.ts-arrow {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.ts-tip {
+  margin-top: 10px;
+  font-size: 10px;
+  color: #6B7280;
+  text-align: center;
+  border-top: 1px solid #E5E7EB;
+  padding-top: 8px;
+}

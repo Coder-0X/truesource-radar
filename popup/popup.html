@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrueSource Radar</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo-icon"></div>
+        <div>
+          <h1 class="brand-title">TrueSource Radar</h1>
+          <span class="brand-sub">Factory & Anti-Dropship Inspector</span>
+        </div>
+      </div>
+      <span class="status-badge" id="radar-status">Active</span>
+    </header>
+
+    <!-- Active Tab Detected Product Card -->
+    <section class="active-product-card" id="active-product-card" style="display: none;">
+      <div class="card-header">
+        <span class="card-badge">Current Page Target</span>
+        <span class="active-risk-pill" id="active-risk-pill">85% High Dropship Risk</span>
+      </div>
+      <div class="active-product-body">
+        <img id="active-thumb" class="active-thumb" src="" alt="Thumbnail" />
+        <div class="active-details">
+          <span class="active-title" id="active-title">Product Title</span>
+          <span class="active-price" id="active-price">Retail: $0.00</span>
+          <span class="active-factory" id="active-factory">Factory Cost: $0.00</span>
+          <span class="active-query" id="active-query">Query: ...</span>
+        </div>
+      </div>
+      <div class="active-actions-grid">
+        <a href="#" id="btn-active-1688" target="_blank" class="active-action-btn s1688" title="Searches 1688 using translated Chinese keywords">
+          <span id="btn-1688-label">🇨🇳 1688 Factory (Chinese)</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+        <a href="#" id="btn-active-ali" target="_blank" class="active-action-btn ali" title="Searches AliExpress catalog">
+          <span>📦 Search AliExpress</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+        <a href="#" id="btn-active-bing" target="_blank" class="active-action-btn bing" title="Instant Visual Identification">
+          <span>⚡ Bing Visual Match</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+        <a href="#" id="btn-active-alibaba" target="_blank" class="active-action-btn alibaba" title="Alibaba OEM factory directory">
+          <span>🏭 Alibaba OEM Factory</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+        <a href="#" id="btn-active-lens" target="_blank" class="active-action-btn lens" title="Google Lens visual matches">
+          <span>🔍 Google Lens (Visual)</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Fallback Notice when on non-product pages -->
+    <div id="no-active-product" class="no-product-banner">
+      💡 Browse to an Amazon or Etsy product page to see real-time dropship scoring and direct 1688 Chinese factory links.
+    </div>
+
+    <!-- Stats Bar -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" id="stat-scanned">0</span>
+        <span class="stat-label">Scanned</span>
+      </div>
+      <div class="stat-card alert-stat">
+        <span class="stat-number" id="stat-detected">0</span>
+        <span class="stat-label">Dropshipped</span>
+      </div>
+      <div class="stat-card savings-stat">
+        <span class="stat-number" id="stat-savings">$0</span>
+        <span class="stat-label">Saved Est.</span>
+      </div>
+    </section>
+
+    <!-- Manual / Custom Search -->
+    <section class="quick-lookup">
+      <h2 class="section-title">Manual Product Check</h2>
+      <div class="input-group">
+        <input type="text" id="manual-query" placeholder="Type keywords or paste image URL...">
+        <button id="manual-search-btn" class="btn-primary">Search</button>
+      </div>
+
+      <div class="quick-links" id="quick-links-results">
+        <a href="https://s.1688.com" id="link-1688" target="_blank" class="quick-link-chip s1688">🇨🇳 1688</a>
+        <a href="https://www.aliexpress.com" id="link-ali" target="_blank" class="quick-link-chip ali">📦 AliExpress</a>
+        <a href="https://www.bing.com/images" id="link-bing" target="_blank" class="quick-link-chip bing">⚡ Bing Vision</a>
+        <a href="https://www.alibaba.com" id="link-alibaba" target="_blank" class="quick-link-chip alibaba">🏭 Alibaba</a>
+        <a href="https://lens.google.com" id="link-lens" target="_blank" class="quick-link-chip lens">🔍 Lens</a>
+      </div>
+      <span class="lookup-status" id="lookup-hint">1688 searches automatically map to native Chinese keywords.</span>
+    </section>
+
+    <!-- Recent Scanned Products -->
+    <section class="recent-section">
+      <div class="recent-header">
+        <h2 class="section-title">Recent Scans</h2>
+        <button id="clear-history-btn" class="btn-text">Clear</button>
+      </div>
+      <div id="recent-list" class="recent-list">
+        <div class="empty-state">No listings scanned yet.</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <label class="toggle-control">
+        <input type="checkbox" id="autoscan-toggle" checked>
+        <span class="toggle-slider"></span>
+        <span class="toggle-label">Auto-scan shopping pages</span>
+      </label>
+      <span class="version-tag">v1.3.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

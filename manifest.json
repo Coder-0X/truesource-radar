@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "TrueSource Radar - Anti-Dropship & Factory Finder",
+  "version": "1.3.0",
+  "description": "Exposes dropshipped items on Etsy, Amazon & Shopify, finding original Chinese factory sources on 1688 and AliExpress.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "TrueSource Radar",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "*://*.etsy.com/*",
+    "*://*.amazon.com/*",
+    "*://*.myshopify.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.etsy.com/*",
+        "*://*.amazon.com/*",
+        "*://*.myshopify.com/*"
+      ],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
