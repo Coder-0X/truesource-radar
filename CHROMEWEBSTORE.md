@@ -71,7 +71,8 @@ HOW TO USE
 ## 4. Package Artifact
 
 The production-ready, clean ZIP package is built and located at:
-`dist/truesource-radar-v1.3.0.zip` (24 KB)
+- `dist/truesource-radar-v1.3.1.zip` (31 KB - Latest Update)
+- `dist/truesource-radar-v1.3.0.zip` (24 KB)
 
 ---
 
@@ -79,6 +80,7 @@ The production-ready, clean ZIP package is built and located at:
 
 | Version | Date | Changes | Status |
 |---|---|---|---|
-| 1.3.0 | 2026-10-25 | Fixed price decimal cents extraction; added Amazon pseudo-brand detection; added bilingual Chinese keyword translation for 1688; added page guards against non-product pages; built production submission ZIP. | Ready for Store Submission |
+| 1.3.1 | 2026-10-31 | Edge Store update release with complete icon assets and verified manifest. | Active Production Release |
+| 1.3.0 | 2026-10-25 | Fixed price decimal cents extraction; added Amazon pseudo-brand detection; added bilingual Chinese keyword translation for 1688; added page guards against non-product pages; built production submission ZIP. | Superseded |
 | 1.2.0 | 2026-10-25 | Added active tab sync, Bing visual product identifier, and multi-currency parsing. | Superseded |
 | 1.0.0 | 2026-10-24 | Initial release: Etsy, Amazon, Shopify detection. | Superseded |
